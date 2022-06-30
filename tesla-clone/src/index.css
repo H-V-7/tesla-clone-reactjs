@@ -1,0 +1,9 @@
+* {
+    /* we use box-sizing to include the padding with the width */
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+    color: #393c41;
+    margin: 0px;
+    padding: 0px;
+
+}
