@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import Section from "./Section";
+import carData from "../data"
+
+const sectionElements = carData.map(items => {
+    return (
+        <Section key={items.id} {...items} />
+    )
+})
 
 
 
@@ -9,7 +16,7 @@ export default function Home() {
 
     return (
         <Container>
-            <Section />
+            {sectionElements}
         </Container>
     )
 }
@@ -20,4 +27,5 @@ export default function Home() {
 
 const Container = styled.section`
     height:100vh;  
+    width: 100vw;
    `

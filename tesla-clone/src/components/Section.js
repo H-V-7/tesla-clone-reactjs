@@ -1,25 +1,30 @@
 import React from "react";
 import styled from "styled-components";
 import "../index.css"
+import Fade from "react-reveal/Fade";
 
-export default function Section() {
+export default function Section(props) {
     return (
-        <Wrap>
-            <ItemText>
-                <h1>Model S</h1>
-                <p>Order Online For Touchless Delivery</p>
-            </ItemText>
-            <Button>
-                <ButtonGroup>
-                    <LeftButton>
-                        Custom Button
-                    </LeftButton>
-                    <RightButton>
-                        Existing Inventory
-                    </RightButton>
-                </ButtonGroup>
-                <DownArrow src="./images/down-arrow.svg" />
-            </Button>
+        <Wrap bgImage={props.image}>
+            <Fade bottom>
+                <ItemText>
+                    <h1>{props.title}</h1>
+                    <p>{props.description}</p>
+                </ItemText>
+
+                <Button>
+
+                    <ButtonGroup>
+                        <LeftButton>
+                            Custom Button
+                        </LeftButton>
+                        <RightButton>
+                            Existing Inventory
+                        </RightButton>
+                    </ButtonGroup>
+                    <DownArrow src="./images/down-arrow.svg" />
+                </Button>
+            </Fade>
         </Wrap>
     )
 }
@@ -27,7 +32,7 @@ export default function Section() {
 const Wrap = styled.div`
     height:100vh;
     width:100vw;
-    background-image: url("./images/model-s.jpg");
+    background-image: ${props => `url("/images/${props.bgImage}")`};
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
@@ -37,9 +42,15 @@ const Wrap = styled.div`
     align-items: center;
 `
 const ItemText = styled.div`
-    height:auto;
-    text-align: center;
-    padding:70px;
+    display:flex;
+    flex-direction: column;
+    row-gap:5px;
+    padding:80px;
+    text-align:center;
+    justify-content: center;
+    align-items: center;
+    margin-top:50px;
+    
 `
 const Button = styled.div`
     display:flex;
@@ -80,3 +91,4 @@ const DownArrow = styled.img`
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 `
+

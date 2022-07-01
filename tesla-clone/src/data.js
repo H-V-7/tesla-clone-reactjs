@@ -1,4 +1,5 @@
-[
+
+export default [
     {
         "id": 0,
         "title": "Model S",
@@ -38,5 +39,6 @@
         "time": "2.05",
         "topSpeed": "190",
         "peakPower": "1,040"
-    }
+    },
+
 ]
